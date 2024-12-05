@@ -98,12 +98,15 @@ if (contactForm) {
 
 const checkoutButton = document.getElementById('checkout-button')
 checkoutButton.addEventListener('click', (event) => {
+  
+  const { id, name, price } = event.currentTarget.dataset
+  
   dataLayer.push({
-    event: 'goToCheckout',
+    event: 'goToCheckout',   
+    location: 'cart',
     
     item: { id, name, price },
     
-    location: 'cart',
     cart: cartLS.list(),
     totalPrice: cartLS.total(),
     totalQuantity: cartLS.list().reduce((prev, curr) => prev + curr.quantity, 0)
