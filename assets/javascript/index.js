@@ -105,7 +105,7 @@ checkoutButton.addEventListener('click', (event) => {
     event: 'goToCheckout',   
     location: 'cart',
     
-    item: { id, name, price },
+    cart: { id, name, price },
     
     cart: cartLS.list(),
     totalPrice: cartLS.total(),
