@@ -100,6 +100,9 @@ const checkoutButton = document.getElementById('checkout-button')
 checkoutButton.addEventListener('click', (event) => {
   dataLayer.push({
     event: 'goToCheckout',
+    
+    item: { id, name, price },
+    
     location: 'cart',
     cart: cartLS.list(),
     totalPrice: cartLS.total(),
