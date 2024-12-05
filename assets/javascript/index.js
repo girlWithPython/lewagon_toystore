@@ -101,7 +101,10 @@ checkoutButton.addEventListener('click', (event) => {
    
   dataLayer.push({
     event: 'goToCheckout',   
-    location: 'cart',         
+    location: 'cart', 
+    
+    item: cartLS.list()[0],
+    
     cart: cartLS.list(),
     totalPrice: cartLS.total(),
     totalQuantity: cartLS.list().reduce((prev, curr) => prev + curr.quantity, 0)
